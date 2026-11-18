@@ -1,0 +1,18 @@
+{
+  "total_trips": 90,
+  "train_trips": 80,
+  "student_test_trips": 10,
+  "total_gps_points": 227577,
+  "avg_gps_points_per_trip": 2528.633333333333,
+  "min_gps_points": 262,
+  "max_gps_points": 19313,
+  "total_trajectory_km": 3268.119,
+  "avg_trajectory_km": 36.31243333333334,
+  "overall_pct_1s_sampling": 94.3191126015789,
+  "trips_with_gaps_gt_5s": 47,
+  "avg_route_arcs": 386.81111111111113,
+  "overall_route_continuity_pct": 99.93900000000001,
+  "all_coords_valid": true,
+  "all_timestamps_monotonic": true,
+  "nan_observations": 0
+}

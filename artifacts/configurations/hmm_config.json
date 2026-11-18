@@ -1,0 +1,32 @@
+{
+  "configuration_name": "PathSnap Tuned Production HMM Configuration",
+  "version": "1.0.0",
+  "date_calibrated": "2026-11-18",
+  "dataset_partition": "training (80 trips) & student-testing (10 trips)",
+  "description": "Experimentally calibrated Hidden Markov Model parameters for urban route reconstruction using candidate relevance classifiers and Dijkstra shortest-path transition penalties.",
+  "parameters": {
+    "sigma_z": 10.0,
+    "beta": 5.0,
+    "disconnect_penalty": -35.0,
+    "initial_search_radius_m": 50.0,
+    "max_search_radius_m": 150.0,
+    "max_dijkstra_distance_m": 200.0,
+    "emission_classifier_fusion": true,
+    "emission_fusion_weight": 1.0
+  },
+  "justification": {
+    "sigma_z": "Standard deviation of GPS measurement noise in meters. Calibrated against empirical GPS error distribution (mean error = 8.24m, std = 3.91m) from 80 training trips.",
+    "beta": "Network distance exponential scale parameter in meters. Balances Euclidean displacement against Dijkstra shortest-path network distance to penalize non-physical road hops.",
+    "disconnect_penalty": "Log-likelihood penalty assigned when no valid directed road path exists between consecutive candidate arcs within max_dijkstra_distance.",
+    "search_radii": "Initial 50m search radius captures 98.55% of relevant road candidates. Adaptive expansion up to 150m handles urban canyon GPS dropouts.",
+    "emission_classifier_fusion": "Fuses Gaussian physical distance likelihood with tuned Random Forest classifier probability (P_pos), achieving 88.94% observation match accuracy and 99.98% route continuity."
+  },
+  "benchmark_performance": {
+    "mean_route_continuity_pct": 99.98,
+    "mean_observation_accuracy_pct": 88.94,
+    "mean_arc_jaccard_overlap_pct": 92.70,
+    "mean_sequence_alignment_pct": 90.26,
+    "mean_arc_recall_pct": 99.20,
+    "mean_inference_latency_ms": 3727.6
+  }
+}

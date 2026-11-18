@@ -1,0 +1,12 @@
+{
+  "model_type": "random_forest",
+  "best_value": 0.8702481635786695,
+  "best_params": {
+    "n_estimators": 40,
+    "max_depth": 16,
+    "min_samples_split": 6,
+    "min_samples_leaf": 3
+  },
+  "n_trials": 12,
+  "optimization_time_s": 391.47
+}

@@ -1,0 +1,22 @@
+{
+  "training_partition": {
+    "n_trips": 25,
+    "n_gps_observations": 30224,
+    "n_candidate_samples": 215716,
+    "positive_samples": 29642,
+    "negative_samples": 186074,
+    "candidate_misses": 582,
+    "candidate_miss_rate_pct": 1.9256,
+    "imbalance_ratio": 6.28
+  },
+  "student_test_partition": {
+    "n_trips": 10,
+    "n_gps_observations": 19160,
+    "n_candidate_samples": 164839,
+    "positive_samples": 18882,
+    "negative_samples": 145957,
+    "candidate_misses": 278,
+    "candidate_miss_rate_pct": 1.4509,
+    "imbalance_ratio": 7.73
+  }
+}

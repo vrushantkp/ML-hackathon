@@ -1,0 +1,3 @@
+Configuration,Student-Test Top-1 Accuracy,Route Continuity,Candidate Macro F1,Log Loss,Inference Latency (s)
+Untuned Baseline,80.76%,89.91%,0.875,0.1745,0.587
+Optuna Tuned Model,80.61%,89.88%,0.8814,0.1808,0.246

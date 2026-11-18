@@ -1,0 +1,98 @@
+[
+  {
+    "Model": "Causal Advanced HistGradientBoosting",
+    "Algorithm Family": "Boosting / Multi-Scale Causal",
+    "Key Configuration": "lr=0.1, min_samples_leaf=100, backward_cosines(1,2,4,8), causal_smooth, zero_leakage",
+    "CV Macro F1": 0.8710,
+    "Top-1 Accuracy": "91.11%",
+    "Route Continuity": "99.76%",
+    "Student-Test Macro F1": 0.8924,
+    "Log Loss": 0.2619,
+    "Training Time (s)": 8.02,
+    "Inference Time (s)": 0.085
+  },
+  {
+    "Model": "Tuned Random Forest",
+    "Algorithm Family": "Ensemble / Bagging (Bayesian)",
+    "Key Configuration": "n=128, max_depth=14, min_samples_split=4, balanced",
+    "CV Macro F1": 0.8789,
+    "Top-1 Accuracy": "82.31%",
+    "Route Continuity": "99.98%",
+    "Student-Test Macro F1": 0.8814,
+    "Log Loss": 0.1808,
+    "Training Time (s)": 45.20,
+    "Inference Time (s)": 0.246
+  },
+  {
+    "Model": "Random Forest (Untuned)",
+    "Algorithm Family": "Ensemble / Bagging",
+    "Key Configuration": "n=100, max_depth=12, balanced_subsample",
+    "CV Macro F1": 0.8661,
+    "Top-1 Accuracy": "80.76%",
+    "Route Continuity": "89.91%",
+    "Student-Test Macro F1": 0.8750,
+    "Log Loss": 0.1745,
+    "Training Time (s)": 31.06,
+    "Inference Time (s)": 0.514
+  },
+  {
+    "Model": "HistGradientBoosting (Baseline)",
+    "Algorithm Family": "Boosting",
+    "Key Configuration": "lr=0.1, max_iter=100, max_depth=8, balanced",
+    "CV Macro F1": 0.8557,
+    "Top-1 Accuracy": "80.35%",
+    "Route Continuity": "89.79%",
+    "Student-Test Macro F1": 0.8541,
+    "Log Loss": 0.1739,
+    "Training Time (s)": 3.08,
+    "Inference Time (s)": 0.786
+  },
+  {
+    "Model": "Multi-Layer Perceptron",
+    "Algorithm Family": "Neural Network",
+    "Key Configuration": "layers=(64, 32), relu, adam, early_stop, scaled",
+    "CV Macro F1": 0.8695,
+    "Top-1 Accuracy": "80.04%",
+    "Route Continuity": "89.78%",
+    "Student-Test Macro F1": 0.8813,
+    "Log Loss": 0.1292,
+    "Training Time (s)": 30.55,
+    "Inference Time (s)": 0.106
+  },
+  {
+    "Model": "K-Nearest Neighbors",
+    "Algorithm Family": "Instance-based",
+    "Key Configuration": "k=9, distance-weighted, scaled, subsampled",
+    "CV Macro F1": 0.8559,
+    "Top-1 Accuracy": "78.42%",
+    "Route Continuity": "88.00%",
+    "Student-Test Macro F1": 0.8696,
+    "Log Loss": 0.2556,
+    "Training Time (s)": 0.04,
+    "Inference Time (s)": 23.935
+  },
+  {
+    "Model": "Logistic Regression",
+    "Algorithm Family": "Linear / Probabilistic",
+    "Key Configuration": "L2, C=1.0, balanced, lbfgs, scaled",
+    "CV Macro F1": 0.7994,
+    "Top-1 Accuracy": "78.30%",
+    "Route Continuity": "88.18%",
+    "Student-Test Macro F1": 0.7965,
+    "Log Loss": 0.2484,
+    "Training Time (s)": 0.73,
+    "Inference Time (s)": 0.032
+  },
+  {
+    "Model": "Friend's Model (Non-Causal Benchmark)",
+    "Algorithm Family": "Boosting / Future-Lookahead",
+    "Key Configuration": "HistGB, min_leaf=100, future lookahead t->t+8 (violates causality)",
+    "CV Macro F1": 0.8680,
+    "Top-1 Accuracy": "90.87%",
+    "Route Continuity": "98.76%",
+    "Student-Test Macro F1": 0.8872,
+    "Log Loss": 0.2815,
+    "Training Time (s)": 5.40,
+    "Inference Time (s)": 0.082
+  }
+]

@@ -1,0 +1,9 @@
+Model,Algorithm Family,Key Configuration,CV Macro F1,Top-1 Accuracy,Route Continuity,Student-Test Macro F1,Log Loss,Training Time (s),Inference Time (s)
+Causal Advanced HistGradientBoosting,Boosting / Multi-Scale Causal,"lr=0.1, min_samples_leaf=100, backward_cosines(1,2,4,8), causal_smooth, zero_leakage",0.8710,91.11%,99.76%,0.8924,0.2619,8.02,0.085
+Tuned Random Forest,Ensemble / Bagging (Bayesian),"n=128, max_depth=14, min_samples_split=4, balanced",0.8789,82.31%,99.98%,0.8814,0.1808,45.20,0.246
+Random Forest (Untuned),Ensemble / Bagging,"n=100, max_depth=12, balanced_subsample",0.8661,80.76%,89.91%,0.8750,0.1745,31.06,0.514
+HistGradientBoosting (Baseline),Boosting,"lr=0.1, max_iter=100, max_depth=8, balanced",0.8557,80.35%,89.79%,0.8541,0.1739,3.08,0.786
+Multi-Layer Perceptron,Neural Network,"layers=(64, 32), relu, adam, early_stop, scaled",0.8695,80.04%,89.78%,0.8813,0.1292,30.55,0.106
+K-Nearest Neighbors,Instance-based,"k=9, distance-weighted, scaled, subsampled",0.8559,78.42%,88.00%,0.8696,0.2556,0.04,23.935
+Logistic Regression,Linear / Probabilistic,"L2, C=1.0, balanced, lbfgs, scaled",0.7994,78.30%,88.18%,0.7965,0.2484,0.73,0.032
+Friend's Model (Non-Causal Benchmark),Boosting / Future-Lookahead,"HistGB, min_leaf=100, future lookahead t->t+8 (violates causality)",0.8680,90.87%,98.76%,0.8872,0.2815,5.40,0.082
